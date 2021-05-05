@@ -1,0 +1,41 @@
+{
+	"status": 200,
+	"msg": "OK",
+	"data": {
+		"url": "wss://gateway.discord.gg",
+		"shards": 1,
+		"session_start_limit": {
+			"total": 1000,
+			"remaining": 987,
+			"reset_after": 72249805,
+			"max_concurrency": 1
+		}
+	},
+	"headers": {
+		"date": "Sun, 02 May 2021 08:00:27 GMT",
+		"content-type": "application/json",
+		"transfer-encoding": "chunked",
+		"connection": "close",
+		"set-cookie": [
+			"__cfduid=d27720b1b10d34316d817229fc6d417161619942427; expires=Tue, 01-Jun-21 08:00:27 GMT; path=/; domain=.discord.com; HttpOnly; SameSite=Lax; Secure",
+			"__dcfduid=0c1e0b8d206d4a9080eaf325263c88d6; Expires=Tue, 01-Jun-2021 08:00:27 GMT; Max-Age=2592000; Secure; HttpOnly; Path=/"
+		],
+		"strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+		"x-ratelimit-bucket": "41f9cd5d28af77da04563bcb1d67fdfd",
+		"x-ratelimit-limit": "2",
+		"x-ratelimit-remaining": "1",
+		"x-ratelimit-reset": "1619942432.086",
+		"x-ratelimit-reset-after": "5.000",
+		"x-envoy-upstream-service-time": "72",
+		"via": "1.1 google",
+		"alt-svc": "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400",
+		"cf-cache-status": "DYNAMIC",
+		"cf-request-id": "09cdb0e1920000300a1705d000000001",
+		"expect-ct": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+		"report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report?s=ODzynPOZVC7iY7UEJMpdo0xccK%2FNWx%2FmP27VPD%2BfdSMFCuXj9Idv8LEAGo4aYsstbQGAiHJ03IOV9pqMzzLH3aAMOPAC4IGp3hiG2w%3D%3D\"}],\"max_age\":604800,\"group\":\"cf-nel\"}",
+		"nel": "{\"report_to\":\"cf-nel\",\"max_age\":604800}",
+		"x-content-type-options": "nosniff",
+		"server": "cloudflare",
+		"cf-ray": "648fb748ee2c300a-ORD"
+	}
+}

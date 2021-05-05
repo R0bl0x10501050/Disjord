@@ -1,0 +1,26 @@
+{
+	"name": "disjord",
+	"version": "0.2.1",
+	"description": "An extremely simple, blazing fast Discord bot interaction package!",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "R0bl0x10501050",
+	"license": "Apache-2.0",
+	"licenses": [
+		{
+			"type": "Apache-2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	],
+	"dependencies": {
+		"axios": "^0.21.1",
+		"ws": "^7.4.5"
+	},
+	"directories": {
+		"test": "tests"
+	},
+	"devDependencies": {}
+}

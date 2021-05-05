@@ -1,0 +1,1 @@
+run = "node ./tests/test1.js"

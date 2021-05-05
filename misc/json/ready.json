@@ -1,0 +1,45 @@
+{
+	"t": "READY",
+	"s": 1,
+	"op": 0,
+	"d": {
+		"v": 8,
+		"user_settings": {},
+		"user": {
+			"verified": true,
+			"username": "UltimaMod",
+			"mfa_enabled": false,
+			"id": "813997481116434452",
+			"flags": 0,
+			"email": null,
+			"discriminator": "4422",
+			"bot": true,
+			"avatar": null
+		},
+		"session_id": "c850d2219b4bcdfea674ac10ec28beba",
+		"relationships": [],
+		"private_channels": [],
+		"presences": [],
+		"guilds": [
+			{
+				"unavailable": true,
+				"id": "778064663203545092"
+			}
+		],
+		"guild_join_requests": [],
+		"geo_ordered_rtc_regions": [
+			"us-central",
+			"us-south",
+			"us-east",
+			"us-west",
+			"europe"
+		],
+		"application": {
+			"id": "813997481116434452",
+			"flags": 262144
+		},
+		"_trace": [
+			"[\"gateway-prd-main-4m68\",{\"micros\":40303,\"calls\":[\"discord-sessions-prd-2-112\",{\"micros\":37684,\"calls\":[\"start_session\",{\"micros\":34457,\"calls\":[\"api-prd-main-3gf8\",{\"micros\":30805,\"calls\":[\"get_user\",{\"micros\":2601},\"add_authorized_ip\",{\"micros\":1780},\"get_guilds\",{\"micros\":6739},\"coros_wait\",{\"micros\":1}]}]},\"guilds_connect\",{\"micros\":1,\"calls\":[]},\"presence_connect\",{\"micros\":1,\"calls\":[]}]}]}]"
+		]
+	}
+}

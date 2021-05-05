@@ -1,0 +1,14 @@
+{
+    "id": "796562908716204072",
+    "last_message_id": "839563007632736327",
+    "last_pin_timestamp": "2021-01-26T21:35:55.756000+00:00",
+    "type": 0,
+    "name": "general",
+    "position": 6,
+    "parent_id": "778064663203545093",
+    "topic": null,
+    "guild_id": "778064663203545092",
+    "permission_overwrites": "[OBJECT]", // not rlly done
+    "nsfw": false,
+    "rate_limit_per_user": 0
+  }
