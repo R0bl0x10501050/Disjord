@@ -5,9 +5,12 @@ client.on('ready', () => {
 	console.log("emitter worked")
 })
 
-client.on('message_create', (message) => {
+client.on('message_create', async (message) => {
 	if (message.author === client.user) { return; }
-	message.reply("yo lol it worked ig")
+	if (message.content == "hi") {
+		const newmsg = await message.reply("hello")
+		console.log(newmsg.content)
+	}
 })
 
 client.login(process.env.TOKEN)

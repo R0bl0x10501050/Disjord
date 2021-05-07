@@ -1,3 +1,5 @@
+const Message = require('./Message.js')
+
 class Channel {
 	constructor(client, res) {
 		/*
@@ -15,6 +17,11 @@ class Channel {
 	|| METHODS ||
 	\\ ------- //
 	*/
+
+	_makeMessageFrom(data) {
+		const newMsg = new Message(this.client, data)
+		return newMsg
+	}
 }
 
 module.exports = Channel

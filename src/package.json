@@ -1,12 +1,13 @@
 {
 	"name": "disjord",
-	"version": "0.2.0",
+	"version": "0.2.5",
 	"description": "An extremely simple, blazing fast Discord bot interaction package!",
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
+	"repository": "https://github.com/R0bl0x10501050/Disjord",
+	"keywords": ["discord", "library", "bot", "simple", "nodejs"],
 	"author": "R0bl0x10501050",
 	"license": "Apache-2.0",
 	"licenses": [

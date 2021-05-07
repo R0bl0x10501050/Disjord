@@ -19,9 +19,10 @@ class TextChannel extends Channel {
 	\\ ------- //
 	*/
 
-	send(content, tts, embed, message_reference) {
+	async send(content, tts, embed, message_reference) {
 		let id = this.id
 		let client = this.client
+		let channelclass = this
 		let req
 
 		if (!content) {
@@ -54,18 +55,21 @@ class TextChannel extends Channel {
 				}), client.token)
 			}
 
+			httpreq = await httpreq.request
 			return httpreq
 		}
 
-		getHTTPReq()
-			.then(async (httpreq) => {
-				httpreq = await httpreq.request
-				let newmsg = new Message(this.client, httpreq)
-				return newmsg
+		let httpreq = await getHTTPReq()
+		let returnval = require("../event_handlers/MESSAGE_CREATE.js")
+			.execute(client, httpreq.data)
+			.then(async (httpres) => {
+				httpres = await httpres
+				return httpres
 			})
-			.catch((err) => {
-				console.log(err)
-			})
+			
+
+		returnval = await returnval
+		return returnval
 	}
 }
 

@@ -66,7 +66,6 @@ function getGuild(res) {
 }
 
 class Message {
-	// constructor(attachments, author, channel, content, deleted, embed, embeds, guild, id, member, mentions, message_ref, pinned, reactions, tts) {
 	constructor(client, res) {
 		/*
 		// ---------- \\
@@ -83,14 +82,16 @@ class Message {
 		this.content = res.content
 
 		this.attachments = res.attachments || []
-		this.author = JSON.stringify(new User(res.author)) || null // TODO: make a User
+		this.author = JSON.stringify(new User(res.author)) || null /* TODO: make a User */
 		this.channel = getChannel(res)
+		this.channel_id = res.channel_id
 		this.embeds = res.embeds || []
 		this.guild = getGuild(res)
+		this.guild_id = res.guild_id
 		this.id = res.id || null
-		this.member = res.member || null // TODO: make GuildMember class
+		this.member = res.member || null /* TODO: make GuildMember class */
 		this.mentions = res.mentions || { user: [], roles: [], channels: [], members: [] }
-		this.message_ref = res.referenced_message || null // TODO: make Message out of data
+		this.message_ref = res.referenced_message || null /* TODO: make Message out of data */
 		this.pinned = res.pinned || false
 		this.tts = res.tts || null
 	}
@@ -101,7 +102,7 @@ class Message {
 	\\ ------- //
 	*/
 
-	reply(content, embed, tts) {
+	async reply(content, embed, tts) {
 		let message_ref = new MessageReference(this);
 
 		if (!content) {
@@ -117,7 +118,7 @@ class Message {
 			tts = false
 		}
 
-		let newnewmsg = this.channel.send(content, tts, embed, message_ref)
+		let newnewmsg = await this.channel.send(content, tts, embed, message_ref)
 		return newnewmsg
 	}
 }
