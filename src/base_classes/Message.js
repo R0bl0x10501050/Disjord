@@ -85,6 +85,7 @@ class Message {
 		this.author = JSON.stringify(new User(res.author)) || null /* TODO: make a User */
 		this.channel = getChannel(res)
 		this.channel_id = res.channel_id
+		this.deleted = false
 		this.embeds = res.embeds || []
 		this.guild = getGuild(res)
 		this.guild_id = res.guild_id

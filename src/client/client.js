@@ -98,7 +98,7 @@ async function connect(client, token, recon, cache) {
 				session_id = jdata.session_id
 			}
 
-			// console.log(String(data.t).toLowerCase())
+			console.log(String(data.t).toLowerCase())
 
 			if (String(data.t).toLowerCase() !== "message_create") {
 				let func = require(__dirname+"/../event_handlers/"+String(data.t).toUpperCase()+".js")

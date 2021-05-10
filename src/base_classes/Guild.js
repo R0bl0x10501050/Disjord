@@ -6,6 +6,7 @@ class Guild {
 		\\ ---------- //
 		*/
 
+		this.deleted = false
 		this.id = res.id
 	}
 
