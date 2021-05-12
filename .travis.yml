@@ -1,0 +1,4 @@
+language: node
+rvm:
+	- 12
+	- nodejs
