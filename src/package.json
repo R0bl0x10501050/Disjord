@@ -1,6 +1,6 @@
 {
 	"name": "disjord",
-	"version": "0.2.6",
+	"version": "0.2.7",
 	"description": "An extremely simple, blazing fast Discord bot interaction package!",
 	"main": "index.js",
 	"scripts": {

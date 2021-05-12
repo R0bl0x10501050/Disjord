@@ -1,5 +1,4 @@
 const Channel = require('./Channel.js')
-const Message = require('./Message.js')
 const HTTP = require('../util/http.js')
 const Route = require('../util/route.js')
 
@@ -11,6 +10,8 @@ class TextChannel extends Channel {
 		\\ ---------- //
 		*/
 		super(client, res)
+		this.nsfw = res.nsfw
+		this.rt = res.rate_limit_per_user
 	}
 
 	/*

@@ -1,32 +1,35 @@
-const Message = require('./Message.js')
 const HTTP = require('../util/http.js')
 const Route = require('../util/route.js')
 
 function getType(type) {
-	if (type == 0) {
-		return 'text'
-	} else if (type == 1) {
-		return 'dm'
-	} else if (type == 2) {
-		return 'voice'
-	} else if (type == 3) {
-		return 'dm'
-	} else if (type == 4) {
-		return 'category'
-	} else if (type == 5) {
-		return 'news'
-	} else if (type == 6) {
-		return 'store'
-	} else if (type == 10) {
-		return 'news_thread'
-	} else if (type == 11) {
-		return 'public_thread'
-	} else if (type == 12) {
-		return 'private_thread'
-	} else if (type == 13) {
-		return 'voice'
+	switch (type) {
+		case 0:
+			return 'text'
+		case 1:
+			return 'dm'
+		case 2:
+			return 'voice'
+		case 3:
+			return 'dm'
+		case 4:
+			return 'category'
+		case 5:
+			return 'news'
+		case 6:
+			return 'store'
+		case 10:
+			return 'news_thread'
+		case 11:
+			return 'public_thread'
+		case 12:
+			return 'private_thread'
+		case 13:
+			return 'voice'
+		default:
+			return 'text'
 	}
 }
+
 class Channel {
 	constructor(client, res) {
 		/*
@@ -34,11 +37,14 @@ class Channel {
 		|| PROPERTIES ||
 		\\ ---------- //
 		*/
+
 		this.client = client
-		this.deleted = false
+		this.deleted = res.deleted || false
 		this.name = res.name
 		this.id = res.id
-		this.parent_id = res.parent_id
+		this.parent_id = res.parent_id || null
+		this.permission_overwrites = res.permission_overwrites
+		this.position = res.position
 		this.type = getType(res.type)
 	}
 
@@ -48,16 +54,35 @@ class Channel {
 	\\ ------- //
 	*/
 
-	_makeMessageFrom(data) {
-		const newMsg = new Message(this.client, data)
-		return newMsg
-	}
-
-	async delete() {
+	delete() {
 		new HTTP(new Route('delete', `/channels/${this.id}`), this.client.token)
 	}
 
-	isTest() {
+	moveAbove(channel) {
+		let newPos
+		
+		if (channel) {
+			newPos = Number(channel.position) - 1
+		} else {
+			newPos = Number(this.position) - 1
+		}
+
+		new HTTP(new Route('patch', `/channels/${this.id}`, {position: newPos}), this.client.token)
+	}
+
+	moveBelow(channel) {
+		let newPos
+
+		if (channel) {
+			newPos = Number(channel.position) + 1
+		} else {
+			newPos = Number(this.position) + 1
+		}
+
+		new HTTP(new Route('patch', `/channels/${this.id}`, {position: newPos}), this.client.token)
+	}
+
+	isText() {
 		if (this.type == "voice" || this.type == "category" || this.type == "store" || this.type == "unknown") {
 			return false
 		} else {

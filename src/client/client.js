@@ -2,6 +2,7 @@ const LoginFailure = require('../errors/mainfailures.js').LoginFailure
 const HTTP = require('../util/http.js')
 const Route = require('../util/route.js')
 const User = require('../base_classes/User.js')
+const Group = require('../base_classes/Group.js')
 const WebSocket = require('ws');
 const EventEmitter = require("events").EventEmitter
 let ws = null
@@ -196,10 +197,11 @@ class Client extends EventEmitter {
 		this.token = null
 		this.user = null
 		this.cache = {
-			guilds: [],
-			channels: [],
-			users: [],
-			roles: []
+			guilds: new Group(),
+			channels: new Group(),
+			messages: new Group(),
+			users: new Group(),
+			roles: new Group()
 		}
 	}
 

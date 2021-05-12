@@ -1,7 +1,8 @@
 module.exports = {
 	name: "guild_delete",
 	execute(client, data) {
-		client.cache.guilds[data.id].deleted = true
+		if (!client.cache.guilds.get(data.id)) { return false; }
+		client.cache.guilds.get(data.id).deleted = true
 		
 		for (channel of client.cache.channels.values()) {
 			if (channel.guild_id == data.id) {

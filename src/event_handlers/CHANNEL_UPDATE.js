@@ -1,5 +1,4 @@
 const TextChannel = require('../base_classes/TextChannel.js')
-const VoiceChannel = require('../base_classes/VoiceChannel.js')
 
 function getType(type) {
 	switch (type) {
@@ -31,24 +30,22 @@ function getType(type) {
 }
 
 module.exports = {
-	name: "channel_create",
+	name: "channel_update",
 	execute(client, data) {
-		let newChannel
+		if (!client.cache.channels[data.id]) { return false; }
 
 		if (getType(data.type) == 'text') {
-			newChannel = new TextChannel(client, data)
+			client.cache.channels[data.id] = new TextChannel(client, data)
 		} else if (getType(data.type) == 'news') {
-			newChannel = new NewsChannel(client, data)
+			client.cache.channels[data.id] = new NewsChannel(client, data)
 		} else if (getType(data.type) == 'dm') {
-			newChannel = new DmChannel(client, data)
+			client.cache.channels[data.id] = new DmChannel(client, data)
 		} else if (getType(data.type) == 'voice') {
-			newChannel = new VoiceChannel(client, data)
+			client.cache.channels[data.id] = new VoiceChannel(client, data)
 		} else if (getType(data.type) == 'category') {
-			newChannel = new CategoryChannel(client, data)
+			client.cache.channels[data.id] = new CategoryChannel(client, data)
 		} else if (getType(data.type) == 'store') {
-			newChannel = new StoreChannel(client, data)
+			client.cache.channels[data.id] = new StoreChannel(client, data)
 		}
-		
-		client.cache.channels.push(data.id, newChannel)
 	},
 }

@@ -24,6 +24,9 @@ module.exports = {
 
 		let newMsg = new Message(client, data)
 		newMsg = await newMsg
+
+		client.cache.messages.push(data.id, newMsg)
+		
 		return newMsg
 	},
 }

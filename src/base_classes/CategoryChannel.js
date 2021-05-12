@@ -1,6 +1,6 @@
 const Channel = require('./Channel.js')
 
-class DmChannel extends Channel {
+class CategoryChannel extends Channel {
 	constructor(client, res) {
 		/*
 		// ---------- \\
@@ -17,4 +17,4 @@ class DmChannel extends Channel {
 	*/
 }
 
-module.exports = DmChannel
+module.exports = CategoryChannel
