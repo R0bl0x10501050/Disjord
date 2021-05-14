@@ -1,5 +1,5 @@
 const Discord = require('/home/runner/Disjord/src/index.js')
-const client = new Discord()
+const client = new Discord.Client()
 
 client.on('ready', () => {
 	console.log("emitter worked")
@@ -7,10 +7,15 @@ client.on('ready', () => {
 
 client.on('message_create', async (message) => {
 	if (message.author === client.user) { return; }
-	console.log(client.cache)
+	
 	if (message.channel.name == "aaaa") {
-		const a = await message.channel.delete()
-		console.log(client.cache)
+		// const a = await message.channel.delete()
+		const em = new Discord.MessageEmbed()
+			.setColor("yeLloW")
+			.setTitle("Test")
+			.addField("hiya", "lol", true)
+			
+		message.channel.send(em)
 	}
 })
 

@@ -40,6 +40,8 @@ class HTTP {
 			}).then((res) => {
 				return res
 				// return {status: res.status, msg: res.statusText, data: res.data, headers: res.headers}
+			}).catch((err) => {
+				// console.log(JSON.stringify(err.response.data.errors))
 			})
 		}
 	}

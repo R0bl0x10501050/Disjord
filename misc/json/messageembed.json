@@ -1,0 +1,15 @@
+{
+	"color": "#ff0000",
+	"title": "Test",
+	"author": {},
+	"thumbnail": {},
+	"fields": [
+		{
+			"name": "hiya",
+			"value": "lol",
+			"inline": true
+		}
+	],
+	"image": {},
+	"footer": {}
+}

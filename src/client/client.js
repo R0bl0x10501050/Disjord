@@ -21,7 +21,6 @@ function waitForSocketConnection(socket, callback) {
 				callback();
 			}
 		} else {
-			// process.stdout.write("[W] ")
 			waitForSocketConnection(socket, callback);
 		}
 	}, 5)

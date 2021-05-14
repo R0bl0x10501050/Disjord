@@ -1,3 +1,4 @@
+const MessageEmbed = require('./MessageEmbed.js')
 const Channel = require('./Channel.js')
 const HTTP = require('../util/http.js')
 const Route = require('../util/route.js')
@@ -28,6 +29,9 @@ class TextChannel extends Channel {
 
 		if (!content) {
 			console.log("You need a content field!")
+		} else if (content instanceof MessageEmbed) {
+			embed = content._toJSON()
+			content = null
 		}
 
 		if (!tts) {
@@ -37,6 +41,13 @@ class TextChannel extends Channel {
 		if (!message_reference) {
 			message_reference = null
 		}
+
+		// console.log({
+		// 	content: content,
+		// 	tts: tts,
+		// 	embed: embed,
+		// 	message_reference: message_reference
+		// })
 
 		async function getHTTPReq() {
 			let httpreq
