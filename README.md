@@ -3,7 +3,7 @@
 <div align="center">
   <br />
   <p>
-    <a href="https://discord.gg/kKaj28GUMh"><img src="https://img.shields.io/discord/222078108977594368?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
+    <a href="https://discord.gg/kKaj28GUMh"><img src="https://img.shields.io/discord/841365007526264842?color=7289da&logo=discord&logoColor=white" alt="Discord server" /></a>
     <a href="https://www.npmjs.com/package/disjord"><img src="https://img.shields.io/npm/v/disjord.svg?maxAge=3600" alt="NPM version" /></a>
     <a href="https://www.npmjs.com/package/disjord"><img src="https://img.shields.io/npm/dt/disjord.svg?maxAge=3600" alt="NPM downloads" /></a>
     <a href="https://github.com/R0bl0x10501050/disjord/actions"><img src="https://github.com/R0bl0x10501050/Disjord/actions/workflows/main.yml/badge.svg" alt="Build status" /></a>
