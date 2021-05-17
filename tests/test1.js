@@ -13,7 +13,14 @@ client.on('message_create', async (message) => {
 		const em = new Discord.MessageEmbed()
 			.setColor("yeLloW")
 			.setTitle("Test")
+			.setAuthor("Yo", "https://images-ext-2.discordapp.net/external/rBUJnxWKoYLwAo5FwsYwmultS5AeK4uqaiP2ylKgNlM/https/media.discordapp.net/attachments/779022239219712041/779918543440576562/logoo.gif?width=1057&height=595")
+			.setDescription("LOL IT WORKD")
+			.setThumbnail("https://images-ext-2.discordapp.net/external/rBUJnxWKoYLwAo5FwsYwmultS5AeK4uqaiP2ylKgNlM/https/media.discordapp.net/attachments/779022239219712041/779918543440576562/logoo.gif?width=1057&height=595")
 			.addField("hiya", "lol", true)
+			.addFields({name: "hiya", value: "lolol", inline: false}, {name: "yoo", value: "no", inline: true})
+			.setImage("https://images-ext-2.discordapp.net/external/rBUJnxWKoYLwAo5FwsYwmultS5AeK4uqaiP2ylKgNlM/https/media.discordapp.net/attachments/779022239219712041/779918543440576562/logoo.gif?width=1057&height=595")
+			.setTimestamp()
+			.setFooter("YOOO", "https://images-ext-2.discordapp.net/external/rBUJnxWKoYLwAo5FwsYwmultS5AeK4uqaiP2ylKgNlM/https/media.discordapp.net/attachments/779022239219712041/779918543440576562/logoo.gif?width=1057&height=595")
 			
 		message.channel.send(em)
 	}

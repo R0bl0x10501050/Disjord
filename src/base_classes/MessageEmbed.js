@@ -53,8 +53,53 @@ class MessageEmbed {
 		return this
 	}
 
+	setAuthor(name, icon_url, url) {
+		this.author_name = name
+		this.author_icon_url = icon_url
+		this.author_url = url
+		return this
+	}
+
+	setDescription(text) {
+		this.description = text
+		return this
+	}
+
+	setThumbnail(url) {
+		this.thumbnail_url = url
+		return this
+	}
+
 	addField(name, value, inline) {
 		this.fields.push({ name: name, value: value, inline: inline })
+		return this
+	}
+
+	setImage(url) {
+		this.image_url = url
+		return this
+	}
+
+	addFields(array) {
+		for (var i=0; i++; i<array.length) {
+			let v = array[i]
+			this.addField(v.name, v.value, v.inline)
+		}
+		return this
+	}
+
+	setTimestamp(date) {
+		if (date && date instanceof Date) {
+			this.date = date
+		} else {
+			this.date = new Date()
+		}
+		return this
+	}
+
+	setFooter(text, icon_url) {
+		this.footer_text = text
+		this.footer_icon_url = icon_url
 		return this
 	}
 
