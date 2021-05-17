@@ -7,7 +7,7 @@
     <a href="https://www.npmjs.com/package/disjord"><img src="https://img.shields.io/npm/v/disjord.svg?maxAge=3600" alt="NPM version" /></a>
     <a href="https://www.npmjs.com/package/disjord"><img src="https://img.shields.io/npm/dt/disjord.svg?maxAge=3600" alt="NPM downloads" /></a>
     <a href="https://github.com/R0bl0x10501050/disjord/actions"><img src="https://github.com/R0bl0x10501050/Disjord/actions/workflows/main.yml/badge.svg" alt="Build status" /></a>
-    <a href="https://david-dm.org/R0bl0x10501050/disjord"><img src="https://img.shields.io/david/R0bl0x10501050/disjord.svg?maxAge=3600" alt="Dependencies" /></a>
+    <a href="https://david-dm.org/R0bl0x10501050/disjord"><img src="https://status.david-dm.org/gh/R0bl0x10501050/disjord.svg" alt="Dependencies" /></a>
     <a href="https://www.patreon.com/R0bl0x10501050"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
   </p>
   <p>
