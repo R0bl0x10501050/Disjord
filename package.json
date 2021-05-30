@@ -4,7 +4,7 @@
 	"description": "An extremely simple, blazing fast Discord bot interaction package!",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Success\""
 	},
 	"keywords": [],
 	"author": "R0bl0x10501050",
