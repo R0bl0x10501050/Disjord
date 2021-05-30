@@ -1,0 +1,38 @@
+site_name: Disjord
+site_url: https://r0bl0x10501050.github.io/Disjord/
+repo_name: R0bl0x10501050/Disjord
+repo_url: https://github.com/R0bl0x10501050/Disjord
+
+theme:
+  name: material
+  palette:
+  
+  # Light mode
+    - light blue: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: light blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Turn Off The Lights
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: white
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Turn On The Lights
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+    
+markdown_extensions:
+  - admonition
+  - attr_list
+  - meta
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
