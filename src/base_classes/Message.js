@@ -82,7 +82,7 @@ class Message {
 		this.content = res.content
 
 		this.attachments = res.attachments || []
-		this.author = JSON.stringify(new User(res.author)) || null /* TODO: make a User */
+		this.author = new User(res.author) || null /* TODO: make a User */
 		this.channel = getChannel(res)
 		this.channel_id = res.channel_id
 		this.deleted = false

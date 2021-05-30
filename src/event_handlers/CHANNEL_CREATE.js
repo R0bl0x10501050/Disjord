@@ -1,5 +1,6 @@
 const TextChannel = require('../base_classes/TextChannel.js')
 const VoiceChannel = require('../base_classes/VoiceChannel.js')
+const CategoryChannel = require('../base_classes/CategoryChannel.js')
 
 function getType(type) {
 	switch (type) {

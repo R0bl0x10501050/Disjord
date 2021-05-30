@@ -54,9 +54,9 @@ class MessageEmbed {
 	}
 
 	setAuthor(name, icon_url, url) {
-		this.author_name = name
-		this.author_icon_url = icon_url
-		this.author_url = url
+		this.author_name = name || null
+		this.author_icon_url = icon_url || null
+		this.author_url = url || null
 		return this
 	}
 
@@ -75,24 +75,24 @@ class MessageEmbed {
 		return this
 	}
 
-	setImage(url) {
-		this.image_url = url
-		return this
-	}
-
 	addFields(array) {
-		for (var i=0; i++; i<array.length) {
+		for (var i=0; i<array.length; i++) {
 			let v = array[i]
 			this.addField(v.name, v.value, v.inline)
 		}
 		return this
 	}
 
+	setImage(url) {
+		this.image_url = url
+		return this
+	}
+
 	setTimestamp(date) {
 		if (date && date instanceof Date) {
-			this.date = date
+			this.timestamp = date
 		} else {
-			this.date = new Date()
+			this.timestamp = new Date()
 		}
 		return this
 	}
@@ -128,6 +128,8 @@ class MessageEmbed {
 			}
 		}
 
+		console.log(array.author)
+
 		// Adding Fields
 		for (const [k, v] of this.fields.entries()) {
 			array.fields.push(v)
@@ -141,6 +143,7 @@ class MessageEmbed {
 					delete obj[k]
 				} else if (typeof v == "object") {
 					let total2 = checkAndRemove(v)
+					/*
 					let a = 0
 
 					for (const [k2,v2] of Object.entries(v)) {
@@ -150,6 +153,7 @@ class MessageEmbed {
 					if (a !== total2) {
 						delete obj[k]
 					}
+					*/
 				}
 			}
 			return total

@@ -35,6 +35,7 @@ function getType(type) {
 module.exports = {
 	name: "guild_create",
 	execute(client, data) {
+		console.log(JSON.stringify(data))
 		let newGuild = new Guild(client, data)
 		client.cache.guilds.push(data.id, newGuild)
 		for (let [k,v] of data.channels.entries()) {

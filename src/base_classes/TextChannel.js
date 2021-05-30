@@ -12,7 +12,7 @@ class TextChannel extends Channel {
 		*/
 		super(client, res)
 		this.nsfw = res.nsfw
-		this.rt = res.rate_limit_per_user
+		this.timeout = res.rate_limit_per_user
 	}
 
 	/*

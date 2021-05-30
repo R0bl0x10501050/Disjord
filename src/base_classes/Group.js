@@ -1,6 +1,7 @@
 class Group {
-	constructor() {
+	constructor(data) {
 		this.data = new Object()
+		this.newData = data
 		this.frozen = false
 	}
 
@@ -19,6 +20,24 @@ class Group {
 		}, Number(time))
 	}
 
+	insert(potentialData) {
+		let data = this.newData || potentialData
+
+		if (typeof data !== "object") {
+			return
+		} else {
+			try {
+				for (let i=0; i<data.length; i++) {
+					this.push(i, data[i])
+				}
+			} catch {
+				for (const [k,v] of Object.entries(data)) {
+					this.push(k,v)
+				}
+			}
+		}
+	}
+
 	keys() {
 		return Object.keys(this.data)
 	}
@@ -32,11 +51,13 @@ class Group {
 	pop(key) { // changing
 		if (this.frozen) { return; }
 		this.data[key] = null
+		delete this.data[key]
 	}
 
 	popEnd() { // changing
 		if (this.frozen) { return; }
 		this.data[Object.values(this.data).length] = null
+		delete this.data[Object.values(this.data).length]
 	}
 
 	values() {

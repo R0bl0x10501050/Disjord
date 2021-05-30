@@ -3,6 +3,7 @@ const HTTP = require('../util/http.js')
 const Route = require('../util/route.js')
 const User = require('../base_classes/User.js')
 const Group = require('../base_classes/Group.js')
+const Permissions = require('../base_classes/Constants.js').Permissions
 const WebSocket = require('ws');
 const EventEmitter = require("events").EventEmitter
 let ws = null
@@ -193,15 +194,17 @@ class Client extends EventEmitter {
 
 		super()
 		
-		this.token = null
-		this.user = null
 		this.cache = {
 			guilds: new Group(),
 			channels: new Group(),
 			messages: new Group(),
 			users: new Group(),
-			roles: new Group()
+			roles: new Group(),
+			emojis: new Group()
 		}
+		this.roles = new RolesGroup().insert()
+		this.token = null
+		this.user = null
 	}
 
 	/*
@@ -209,6 +212,38 @@ class Client extends EventEmitter {
 	|| METHODS ||
 	\\ ------- //
 	*/
+
+	destroy() {
+		this.logout()
+
+		function killAll(obj) {
+			for (const [k,v] of Object.entries(obj)) {
+				if (typeof v == "object") {
+					killAll(v)
+				} else {
+					obj[k] = null
+					delete obj[k]
+				}
+			}
+		}
+
+		killAll(this)
+		this = null
+	}
+
+	hasPermission(perm) {
+		if (Permissions[perm.toUpperCase()]) {
+			for (const [k,v] of this.roles.entries()) {
+				if (v.permissions[perm.toUpperCase()]) {
+					return true
+				} else {
+					return false
+				}
+			}
+		} else {
+			return false // TODO: create invalid permission error
+		}
+	}
 
 	async login(token) {
 		let data
